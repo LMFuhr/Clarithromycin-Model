@@ -1,3 +1,6 @@
 
 
-Clarithromycin is a widely prescribed antibiotic (10) that is mainly metabolized via CYP3A4 (11). It forms a non-covalent metabolic-intermediate complex with CYP3A4 (12) leading to a mechanism-based inhibition (MBI). This MBI is characterized by a non-linear, dose-dependent and irreversible degradation of CYP3A4. Thus, the MBI by clarithromycin leads to a mechanism-based auto-inhibition of metabolism and results in a non-linear increase of clarithromycin exposure after ascending doses of clarithromycin (13). Clarithromycin is also a substrate (14) and competitive inhibitor of P-glycoprotein (P-gp) (15) as well as a substrate (16,17) and competitive inhibitor of human organic anion-transporting polypeptides (OATP) 1B1 and 1B3 (18).
+Clarithromycin is a widely prescribed macrolide antibiotic and a substrate and mechanism-based inactivator of CYP3A4. Furthermore, clarithromycin is a substrate and inhibitor of P-gp and an inhibitor of OATP1B1 and OATP1B3 ([Eberl 2007](#5 References), [Seithel 2007](#5 References)). Clarithromycin has been proposed as one of the best alternative CYP3A4 inhibitors for clinical DDI studies to avoid further use of ketoconazole.
+
+The presented Clarithromycin model was developed by Moj et al. ([Moj 2017](#5 References)) and revised by Hanke et al. ([Hanke 2018](#5 References)).
+
