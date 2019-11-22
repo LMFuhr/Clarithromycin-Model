@@ -22,7 +22,7 @@ markdownJoinerFolder = 'C:\Users\Laura Fuhr\Documents\Matlab\markdown-joiner';
 %   - report
 %
 
-basisDir = 'C:\Users\Laura Fuhr\Documents\Evaluation-plan-template-master\Evaluation-plan-template-master\Evaluation';
+basisDir = 'C:\Users\Laura Fuhr\Documents\Clarithromycin-Model\Clarithromycin-Model\Evaluation';
 qualificationPlanName = 'evaluation_plan.json';
 
 % In case your folder structure is different from assumed above, 
@@ -35,10 +35,10 @@ qualificationPlanName = 'evaluation_plan.json';
 %                  CAUTION: if the folder is not empty, its contents will be deleted
 %
 % - ReportOutput_path: final report will be generated here
-qualificationPlan = fullfile(basisDir,'input',qualificationPlanName);
+qualificationPlan = fullfile(basisDir,'Input',qualificationPlanName);
 REInput_path = fullfile(basisDir,'re_input');
 REOutput_path = fullfile(basisDir,'re_output');
-ReportOutput_path=fullfile(basisDir,'report');
+ReportOutput_path=fullfile(basisDir, 'report');
 
 % --------------------------------------------------------------
 % STEP #1: start qualification runner to generate inputs for the reporting engine
