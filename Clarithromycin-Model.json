@@ -637,7 +637,11 @@
             {
               "Name": "Lipophilicity",
               "Value": 2.3,
-              "Unit": "Log Units"
+              "Unit": "Log Units",
+              "ValueOrigin": {
+                "Source": "Publication",
+                "Description": "Lappin 2011"
+              }
             }
           ]
         }
@@ -649,7 +653,11 @@
           "Parameters": [
             {
               "Name": "Fraction unbound (plasma, reference value)",
-              "Value": 0.299
+              "Value": 0.299,
+              "ValueOrigin": {
+                "Source": "Publication",
+                "Description": "Chu 1993"
+              }
             }
           ]
         }
@@ -661,11 +669,19 @@
             {
               "Name": "Solubility at reference pH",
               "Value": 12.17,
-              "Unit": "mg/ml"
+              "Unit": "mg/ml",
+              "ValueOrigin": {
+                "Source": "Publication",
+                "Description": "Salem 2003"
+              }
             },
             {
               "Name": "Reference pH",
-              "Value": 2.4
+              "Value": 2.4,
+              "ValueOrigin": {
+                "Source": "Publication",
+                "Description": "Salem 2003"
+              }
             }
           ]
         }
@@ -677,7 +693,11 @@
             {
               "Name": "Specific intestinal permeability (transcellular)",
               "Value": 1.23E-06,
-              "Unit": "dm/min"
+              "Unit": "dm/min",
+              "ValueOrigin": {
+                "Source": "ParameterIdentification",
+                "Description": "optimized"
+              }
             }
           ]
         }
@@ -687,7 +707,8 @@
           "Type": "Base",
           "Pka": 8.99,
           "ValueOrigin": {
-            "Source": "Unknown"
+            "Source": "Publication",
+            "Description": "McFarland 1997"
           }
         }
       ],
@@ -705,14 +726,18 @@
             {
               "Name": "Km",
               "Value": 48.7,
-              "Unit": "µmol/l"
+              "Unit": "µmol/l",
+              "ValueOrigin": {
+                "Source": "Publication",
+                "Description": "Rodrigues 1997"
+              }
             },
             {
               "Name": "kcat",
               "Value": 76.5,
               "Unit": "1/min",
               "ValueOrigin": {
-                "Source": "Unknown"
+                "Source": "ParameterIdentification"
               }
             }
           ]
@@ -757,7 +782,11 @@
             {
               "Name": "Ki",
               "Value": 4.1,
-              "Unit": "µmol/l"
+              "Unit": "µmol/l",
+              "ValueOrigin": {
+                "Source": "Publication",
+                "Description": "Eberl 2007"
+              }
             }
           ]
         },
@@ -786,7 +815,11 @@
             {
               "Name": "Ki",
               "Value": 5.3,
-              "Unit": "µmol/l"
+              "Unit": "µmol/l",
+              "ValueOrigin": {
+                "Source": "Publication",
+                "Description": "Vermeer 2016"
+              }
             }
           ]
         },
@@ -798,7 +831,11 @@
             {
               "Name": "Ki",
               "Value": 14.0,
-              "Unit": "µmol/l"
+              "Unit": "µmol/l",
+              "ValueOrigin": {
+                "Source": "Publication",
+                "Description": "Vermeer 2016"
+              }
             }
           ]
         }
@@ -1450,7 +1487,7 @@
               "NumberMode": "Normal"
             },
             {
-              "Unit": "µmol/l",
+              "Unit": "µg/ml",
               "Dimension": "Concentration (molar)",
               "Type": "Y",
               "GridLines": false,
@@ -1484,7 +1521,7 @@
             }
           ],
           "Name": "Time Profile Analysis",
-          "OriginText": "Clarithromycin-Model\nClarithromycin iv, Chu 1992, 250 mg, 0.75 h\n2019-11-15 15:01"
+          "OriginText": "Clarithromycin-Model\nClarithromycin iv, Chu 1992, 250 mg, 0.75 h\n2019-11-25 17:47"
         }
       ],
       "Interactions": [
@@ -1671,7 +1708,7 @@
             }
           ],
           "Name": "Time Profile Analysis",
-          "OriginText": "Clarithromycin-Model\nClarithromycin po, Abduljalil 2009, 500 mg, MD, 3.5 d\n2019-11-15 15:01"
+          "OriginText": "Clarithromycin-Model\nClarithromycin po, Abduljalil 2009, 500 mg, MD, 3.5 d\n2019-11-25 17:47"
         }
       ],
       "Interactions": [
@@ -1794,7 +1831,7 @@
               "NumberMode": "Normal"
             },
             {
-              "Unit": "µmol/l",
+              "Unit": "µg/ml",
               "Dimension": "Concentration (molar)",
               "Type": "Y",
               "GridLines": false,
@@ -1828,7 +1865,7 @@
             }
           ],
           "Name": "Time Profile Analysis",
-          "OriginText": "Clarithromycin-Model\nClarithromycin po, Chu 1992, 100 mg\n2019-11-15 15:02"
+          "OriginText": "Clarithromycin-Model\nClarithromycin po, Chu 1992, 100 mg\n2019-11-25 17:47"
         }
       ],
       "Interactions": [
@@ -1951,7 +1988,7 @@
               "NumberMode": "Normal"
             },
             {
-              "Unit": "µmol/l",
+              "Unit": "µg/ml",
               "Dimension": "Concentration (molar)",
               "Type": "Y",
               "GridLines": false,
@@ -1985,7 +2022,7 @@
             }
           ],
           "Name": "Time Profile Analysis",
-          "OriginText": "Clarithromycin-Model\nClarithromycin po, Chu 1992, 1200 mg\n2019-11-15 15:02"
+          "OriginText": "Clarithromycin-Model\nClarithromycin po, Chu 1992, 1200 mg\n2019-11-25 17:47"
         }
       ],
       "Interactions": [
@@ -2108,7 +2145,7 @@
               "NumberMode": "Normal"
             },
             {
-              "Unit": "µmol/l",
+              "Unit": "µg/ml",
               "Dimension": "Concentration (molar)",
               "Type": "Y",
               "GridLines": false,
@@ -2142,7 +2179,7 @@
             }
           ],
           "Name": "Time Profile Analysis",
-          "OriginText": "Clarithromycin-Model\nClarithromycin po, Chu 1992, 200 mg\n2019-11-15 15:02"
+          "OriginText": "Clarithromycin-Model\nClarithromycin po, Chu 1992, 200 mg\n2019-11-25 17:47"
         }
       ],
       "Interactions": [
@@ -2265,7 +2302,7 @@
               "NumberMode": "Normal"
             },
             {
-              "Unit": "µmol/l",
+              "Unit": "µg/ml",
               "Dimension": "Concentration (molar)",
               "Type": "Y",
               "GridLines": false,
@@ -2299,7 +2336,7 @@
             }
           ],
           "Name": "Time Profile Analysis",
-          "OriginText": "Clarithromycin-Model\nClarithromycin po, Chu 1992, 400 mg\n2019-11-15 15:02"
+          "OriginText": "Clarithromycin-Model\nClarithromycin po, Chu 1992, 400 mg\n2019-11-25 17:47"
         }
       ],
       "Interactions": [
@@ -2422,7 +2459,7 @@
               "NumberMode": "Normal"
             },
             {
-              "Unit": "µmol/l",
+              "Unit": "µg/ml",
               "Dimension": "Concentration (molar)",
               "Type": "Y",
               "GridLines": false,
@@ -2456,7 +2493,7 @@
             }
           ],
           "Name": "Time Profile Analysis",
-          "OriginText": "Clarithromycin-Model\nClarithromycin po, Chu 1992, 600 mg\n2019-11-15 15:03"
+          "OriginText": "Clarithromycin-Model\nClarithromycin po, Chu 1992, 600 mg\n2019-11-25 17:47"
         }
       ],
       "Interactions": [
@@ -2579,7 +2616,7 @@
               "NumberMode": "Normal"
             },
             {
-              "Unit": "µmol/l",
+              "Unit": "µg/ml",
               "Dimension": "Concentration (molar)",
               "Type": "Y",
               "GridLines": false,
@@ -2613,7 +2650,7 @@
             }
           ],
           "Name": "Time Profile Analysis",
-          "OriginText": "Clarithromycin-Model\nClarithromycin po, Chu 1992, 800 mg\n2019-11-15 15:03"
+          "OriginText": "Clarithromycin-Model\nClarithromycin po, Chu 1992, 800 mg\n2019-11-25 17:47"
         }
       ],
       "Interactions": [
@@ -2736,7 +2773,7 @@
               "NumberMode": "Normal"
             },
             {
-              "Unit": "µmol/l",
+              "Unit": "µg/ml",
               "Dimension": "Concentration (molar)",
               "Type": "Y",
               "GridLines": false,
@@ -2770,7 +2807,7 @@
             }
           ],
           "Name": "Time Profile Analysis",
-          "OriginText": "Clarithromycin-Model\nClarithromycin po, Chu 1993, 250 mg\n2019-11-15 15:03"
+          "OriginText": "Clarithromycin-Model\nClarithromycin po, Chu 1993, 250 mg\n2019-11-25 17:47"
         }
       ],
       "Interactions": [
@@ -2923,7 +2960,7 @@
               "NumberMode": "Normal"
             },
             {
-              "Unit": "µmol/l",
+              "Unit": "µg/ml",
               "Dimension": "Concentration (molar)",
               "Type": "Y",
               "GridLines": false,
@@ -2957,7 +2994,7 @@
             }
           ],
           "Name": "Time Profile Analysis",
-          "OriginText": "Clarithromycin-Model\nClarithromycin po, Chu 1993, 250 mg, MD, 3.5 d\n2019-11-15 15:03"
+          "OriginText": "Clarithromycin-Model\nClarithromycin po, Chu 1993, 250 mg, MD, 3.5 d\n2019-11-25 17:47"
         }
       ],
       "Interactions": [
@@ -3080,7 +3117,7 @@
               "NumberMode": "Normal"
             },
             {
-              "Unit": "µmol/l",
+              "Unit": "µg/ml",
               "Dimension": "Concentration (molar)",
               "Type": "Y",
               "GridLines": false,
@@ -3114,7 +3151,7 @@
             }
           ],
           "Name": "Time Profile Analysis",
-          "OriginText": "Clarithromycin-Model\nClarithromycin po, Chu 1993, 500 mg\n2019-11-15 15:04"
+          "OriginText": "Clarithromycin-Model\nClarithromycin po, Chu 1993, 500 mg\n2019-11-25 17:46"
         }
       ],
       "Interactions": [
@@ -3267,7 +3304,7 @@
               "NumberMode": "Normal"
             },
             {
-              "Unit": "µmol/l",
+              "Unit": "µg/ml",
               "Dimension": "Concentration (molar)",
               "Type": "Y",
               "GridLines": false,
@@ -3301,7 +3338,7 @@
             }
           ],
           "Name": "Time Profile Analysis",
-          "OriginText": "Clarithromycin-Model\nClarithromycin po, Chu 1993, 500 mg, MD, 3.5 d\n2019-11-15 15:04"
+          "OriginText": "Clarithromycin-Model\nClarithromycin po, Chu 1993, 500 mg, MD, 3.5 d\n2019-11-25 17:46"
         }
       ],
       "Interactions": [
@@ -3424,7 +3461,7 @@
               "NumberMode": "Normal"
             },
             {
-              "Unit": "µmol/l",
+              "Unit": "µg/ml",
               "Dimension": "Concentration (molar)",
               "Type": "Y",
               "GridLines": false,
@@ -3458,7 +3495,7 @@
             }
           ],
           "Name": "Time Profile Analysis",
-          "OriginText": "Clarithromycin-Model\nClarithromycin po, Kees 1995, 250 mg\n2019-11-15 15:04"
+          "OriginText": "Clarithromycin-Model\nClarithromycin po, Kees 1995, 250 mg\n2019-11-25 17:46"
         }
       ],
       "Interactions": [
@@ -3621,7 +3658,7 @@
               "NumberMode": "Normal"
             },
             {
-              "Unit": "µmol/l",
+              "Unit": "µg/ml",
               "Dimension": "Concentration (molar)",
               "Type": "Y",
               "GridLines": false,
@@ -3655,7 +3692,7 @@
             }
           ],
           "Name": "Time Profile Analysis",
-          "OriginText": "Clarithromycin-Model\nClarithromycin po, Kees 1995, 250 mg, MD, 5 d\n2019-11-15 15:04"
+          "OriginText": "Clarithromycin-Model\nClarithromycin po, Kees 1995, 250 mg, MD, 5 d\n2019-11-25 17:46"
         }
       ],
       "Interactions": [
@@ -3778,7 +3815,7 @@
               "NumberMode": "Normal"
             },
             {
-              "Unit": "µmol/l",
+              "Unit": "µg/ml",
               "Dimension": "Concentration (molar)",
               "Type": "Y",
               "GridLines": false,
@@ -3812,7 +3849,7 @@
             }
           ],
           "Name": "Time Profile Analysis",
-          "OriginText": "Clarithromycin-Model\nClarithromycin po, Kees 1995, 500 mg\n2019-11-15 15:05"
+          "OriginText": "Clarithromycin-Model\nClarithromycin po, Kees 1995, 500 mg\n2019-11-25 17:46"
         }
       ],
       "Interactions": [
@@ -3955,7 +3992,7 @@
               "NumberMode": "Normal"
             },
             {
-              "Unit": "µmol/l",
+              "Unit": "µg/ml",
               "Dimension": "Concentration (molar)",
               "Type": "Y",
               "GridLines": false,
@@ -3989,7 +4026,7 @@
             }
           ],
           "Name": "Time Profile Analysis",
-          "OriginText": "Clarithromycin-Model\nClarithromycin po, Kees 1995, 500 mg, MD, 5 d\n2019-11-15 15:05"
+          "OriginText": "Clarithromycin-Model\nClarithromycin po, Kees 1995, 500 mg, MD, 5 d\n2019-11-25 17:46"
         }
       ],
       "Interactions": [
@@ -4122,7 +4159,7 @@
               "NumberMode": "Normal"
             },
             {
-              "Unit": "µmol/l",
+              "Unit": "µg/ml",
               "Dimension": "Concentration (molar)",
               "Type": "Y",
               "GridLines": false,
@@ -4156,7 +4193,7 @@
             }
           ],
           "Name": "Time Profile Analysis",
-          "OriginText": "Clarithromycin-Model\nClarithromycin po, Rengels 2003, 250 mg, MD, 1.5 d\n2019-11-15 15:05"
+          "OriginText": "Clarithromycin-Model\nClarithromycin po, Rengels 2003, 250 mg, MD, 1.5 d\n2019-11-25 17:46"
         }
       ],
       "Interactions": [
@@ -5273,7 +5310,7 @@
             0.0204386991
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "mg/l"
+          "Unit": "µg/ml"
         }
       ],
       "BaseGrid": {
@@ -5395,7 +5432,7 @@
             0.510979
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "mg/l"
+          "Unit": "µg/ml"
         }
       ],
       "BaseGrid": {
@@ -5517,7 +5554,7 @@
             0.0301295
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "mg/l"
+          "Unit": "µg/ml"
         }
       ],
       "BaseGrid": {
@@ -5640,7 +5677,7 @@
             0.0204386991
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "mg/l"
+          "Unit": "µg/ml"
         }
       ],
       "BaseGrid": {
@@ -5764,7 +5801,7 @@
             0.111122
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "mg/l"
+          "Unit": "µg/ml"
         }
       ],
       "BaseGrid": {
@@ -5888,7 +5925,7 @@
             0.221459
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "mg/l"
+          "Unit": "µg/ml"
         }
       ],
       "BaseGrid": {
@@ -5981,7 +6018,7 @@
             0.0463776
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "mg/l"
+          "Unit": "µg/ml"
         }
       ],
       "BaseGrid": {
@@ -6074,7 +6111,7 @@
             0.0634502
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "mg/l"
+          "Unit": "µg/ml"
         }
       ],
       "BaseGrid": {
@@ -6168,7 +6205,7 @@
             0.057818
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "mg/l"
+          "Unit": "µg/ml"
         }
       ],
       "BaseGrid": {
@@ -6262,7 +6299,7 @@
             0.235334
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "mg/l"
+          "Unit": "µg/ml"
         }
       ],
       "BaseGrid": {
@@ -6355,7 +6392,7 @@
             0.126143
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "mg/l"
+          "Unit": "µg/ml"
         }
       ],
       "BaseGrid": {
@@ -6463,7 +6500,7 @@
             0.230259
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "mg/l"
+          "Unit": "µg/ml"
         }
       ],
       "BaseGrid": {
@@ -6573,7 +6610,7 @@
             0.0877176
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "mg/l"
+          "Unit": "µg/ml"
         }
       ],
       "BaseGrid": {
@@ -6686,7 +6723,7 @@
             0.115277
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "mg/l"
+          "Unit": "µg/ml"
         }
       ],
       "BaseGrid": {
@@ -6844,7 +6881,7 @@
             0.269359976
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "mg/l"
+          "Unit": "µg/ml"
         }
       ],
       "BaseGrid": {
