@@ -7,8 +7,8 @@ tic
 
 % --------------------------------------------------------------
 % replace qualificationRunnerFolder and markdownJoinerFolder with your paths
-qualificationRunnerFolder = 'C:\Software\QualificationRunner 8.0.51';
-markdownJoinerFolder = 'C:\Software\markdown-joiner';
+qualificationRunnerFolder = Path_QR;
+markdownJoinerFolder = Path_MJ;
 
 % --------------------------------------------------------------
 % replace baseDir and qualificationPlanName with your paths
@@ -35,10 +35,10 @@ qualificationPlanName = 'evaluation_plan.json';
 %                  CAUTION: if the folder is not empty, its contents will be deleted
 %
 % - ReportOutput_path: final report will be generated here
-qualificationPlan = fullfile(baseDir,'input',qualificationPlanName);
+qualificationPlan = fullfile(baseDir,'Input',qualificationPlanName);
 REInput_path = fullfile(baseDir,'re_input');
 REOutput_path = fullfile(baseDir,'re_output');
-ReportOutput_path=fullfile(baseDir,'report');
+ReportOutput_path=fullfile(baseDir,'report2');
 
 % --------------------------------------------------------------
 % STEP #1: start qualification runner to generate inputs for the reporting engine
