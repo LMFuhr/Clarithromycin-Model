@@ -14,6 +14,8 @@
 
 **Hanke 2018** Hanke, N. et al. PBPK Models for CYP3A4 and P-gp DDI Prediction: A Modeling Network of Rifampicin, Itraconazole, Clarithromycin,Midazolam, Alfentanil, and Digoxin. CPT Pharmacometrics Syst. Pharmacol. 7, 647-659 (2018)
 
+**Ishiguro 1989** Ishiguro M, Koga H, Kohno S, Hayashi T, Yamaguchi K, Hirota M. Penetration of macrolides into human polymorphonuclear leucocytes. J Antimicrob Chemother. 24, 719–29 (1989)
+
 **Ito 2003** Ito, K., Ogihara, K., Kanamitsu, S.-I. & Itoh, T. Prediction of the in vivo interaction between midazolam and macrolides based on in vitro studies using human liver microsomes. Drug Metab. Dispos. 31, 945–54 (2003).
 
 **Jones 2007** Jones, D.R., Ekins, S., Li, L. & Hall, S.D. Computational approaches that predict metabolic intermediate complex formation with CYP3A4 (+b5). Drug Metab. Dispos. 35, 1466–75 (2007).

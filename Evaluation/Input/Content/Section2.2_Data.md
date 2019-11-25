@@ -1,6 +1,6 @@
 ### 2.2.1	In vitro / physico-chemical Data
 
-A literature search was performed to collect available information on physiochemical properties of dapagliflozin. The obtained information from literature is summarized in the table below. 
+A literature search was performed to collect available information on physiochemical properties of clarithromycin. The obtained information from literature is summarized in the table below. 
 
 | **Parameter**   | **Unit** | **Value**                    | Source                                                       | **Description**                                 |
 | :-------------- | -------- | ---------------------------- | ------------------------------------------------------------ | ----------------------------------------------- |
@@ -17,7 +17,7 @@ A literature search was performed to collect available information on physiochem
 
 ### 2.2.2	Clinical Data
 
-A literature search was performed to collect available clinical data on clarithromycin in healthy adults.
+A literature search was performed to collect available clinical data on clarithromycin in healthy adults. The clarithromycin model was developed using 17 clinical studies, covering a dosing range from 100 to 1200 mg.
 
 #### 2.2.2.1	Model Building
 
@@ -30,7 +30,7 @@ The following studies were used for model building (training data):
 
 #### 2.2.2.2	Model Verification
 
-The following studies were used for model verification:
+The following studies were used for model verification (test data):
 
 | Publication                         | Arm / Treatment / Information used for model building        |
 | :---------------------------------- | :----------------------------------------------------------- |
