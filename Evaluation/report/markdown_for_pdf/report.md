@@ -27,7 +27,9 @@
 
 Clarithromycin is a widely prescribed macrolide antibiotic and a substrate and mechanism-based inactivator of CYP3A4. Furthermore, clarithromycin is a substrate and inhibitor of P-gp and an inhibitor of OATP1B1 and OATP1B3 ([Eberl 2007](#5 References), [Seithel 2007](#5 References)). Clarithromycin has been proposed as one of the best alternative CYP3A4 inhibitors for clinical DDI studies to avoid further use of ketoconazole.
 
-The presented Clarithromycin model was developed by Moj et al. ([Moj 2017](#5 References)) and revised by Hanke et al. ([Hanke 2018](#5 References)).
+Objectives were to develop a fully mechanistic PBPK model for clarithromycin, describing its metabolism by CYP3A4 and its mechanism-based inactivation of the respective enzyme as well as its inhibition of P-gp.
+
+The presented Clarithromycin model was developed by Moj et al. ([Moj 2017](#5 References)) and revised by Hanke et al. ([Hanke 2018](#5 References)) and is publically available on GitHub (...).
 
 
 # 2 Methods
@@ -38,13 +40,14 @@ The general concept of building a PBPK model has previously been described by Ku
 
 The  applied activity and variability of plasma proteins and active processes that are integrated into PK-Sim® are described in the publicly available PK-Sim® Ontogeny Database Version 7.3 ([Schlender 2016](# 5 References)) or otherwise referenced for the specific process.
 
-The clarithromycin model was developed using 17 clinical studies, covering a dosing range from 100 to 1200 mg. The model applies partitioning into blood cells, metabolism by CYP3A4 including mechanism-based auto-inactivation and a renal clearance.
+A typical European individual was used for the development of the clarithromycin model. The relativ tissue specitif expression of CYP3A4 was implemented in accordance with literature using the PK-Sim expression database RT-PCR profile. Enterohepatic cycling was enabled as it is active under physiological conditions. 
 
 Unknown parameters (see below) were identified using the Parameter Identification module provided in PK-Sim®. 
 
 The model was then verified by simulating:
 
-- ...
+- the whole reported dose range including single and multiple doses
+- DDIs with CYP3A4 or P-gp substrates
 
 Details about input data (physicochemical, *in vitro* and clinical) can be found in  [Section 2.2](#2.2	Data).
 
@@ -54,7 +57,7 @@ Details about the structural model and its parameters can be found in  [Section 
 ## 2.2 Data
 ### 2.2.1	In vitro / physico-chemical Data
 
-A literature search was performed to collect available information on physiochemical properties of dapagliflozin. The obtained information from literature is summarized in the table below. 
+A literature search was performed to collect available information on physiochemical properties of clarithromycin. The obtained information from literature is summarized in the table below. 
 
 | **Parameter**   | **Unit** | **Value**                    | Source                                                       | **Description**                                 |
 | :-------------- | -------- | ---------------------------- | ------------------------------------------------------------ | ----------------------------------------------- |
@@ -71,7 +74,7 @@ A literature search was performed to collect available information on physiochem
 
 ### 2.2.2	Clinical Data
 
-A literature search was performed to collect available clinical data on clarithromycin in healthy adults.
+A literature search was performed to collect available clinical data on clarithromycin in healthy adults. The clarithromycin model was developed using 17 clinical studies, covering a dosing range from 100 to 1200 mg.
 
 #### 2.2.2.1	Model Building
 
@@ -84,7 +87,7 @@ The following studies were used for model building (training data):
 
 #### 2.2.2.2	Model Verification
 
-The following studies were used for model verification:
+The following studies were used for model verification (test data):
 
 | Publication                         | Arm / Treatment / Information used for model building        |
 | :---------------------------------- | :----------------------------------------------------------- |
@@ -97,19 +100,27 @@ The following studies were used for model verification:
 ## 2.3 Model Parameters and Assumptions
 ### 2.3.1	Absorption
 
-...
+The specific intestinal permeability was optimized during parameter identification to accurately describe the absorption of clarithromycin after oral administration.
 
 ### 2.3.2	Distribution
 
-...
+Values for logP and fu were fixed according to literature values. 
+
+For clarithromycin, it was not possible to adequately describe the concentration-time profile after intravenous administration using standard input parameters (e.g., logP) and calculation methods (e.g., partition coefficients). Simulated concentration-time profiles over-predicted Cmax and under-predicted the observed data for time > Tmax. According to literature, clarithromycin accumulates in mononuclear (MN) and polymorphonuclear (PMN) leukocytes, probably via active transport ([Ishiguro 1989](#5 References)). This process was implemented, and it improved the model significantly. Due to limited knowledge on this transport (unknown transporter, unknown Vmax, and KM value), an adjustment of the clarithromycin permeability between plasma and RBC compartments was applied. The clarithromycin permeability optimization (Pplasma→RBC, PRBC→plasma) led to an asymmetric permeability ratio Pplasma→RBC/PRBC→plasma of 13, indicating that clarithromycin can more easily enter than exit the RBC compartments.
 
 After testing the available organ-plasma partition coefficient and cell permeability calculation methods built in PK-Sim, observed clinical data was best described by choosing the partition coefficient calculation by `Rodgers and Rowland` and cellular permeability calculation by `PK-Sim Standard`. 
 
-...
-
 ### 2.3.3	Metabolism and Elimination
 
-...
+The final model applies partitioning into blood cells, metabolism by CYP3A4 including mechanism-based auto-inactivation and a renal clearance. 
+
+Metabolism was described using Michaelis Menten kinetics, while the Michaelis-Menten constant Km was taken from in-vitro experiments from literature and the turnover rate kcat was optimized during parameter identification. 
+
+Ki and kinact to describe the mechanism-based inhibition of CYP3A4 were optimized during parameter identification.
+
+A kidney plasma clearance was implemented to describe the renal elimination of clarithromycin. The specific renal clearance CLren was optimized during parameter identification.
+
+
 
 ### 2.3.4	Automated Parameter Identification
 
@@ -124,14 +135,17 @@ This is the result of the final parameter identification.
 
 
 # 3 Results and Discussion
-The PBPK model for COMPOUND was developed and verified with clinical pharmacokinetic data.
+The PBPK model for clarithromycin was developed and verified with clinical pharmacokinetic data. 
 
 The model was evaluated covering data from studies including in particular
 
-* ...
-* ...
+* intravenous and oral administrations
+* a dose range of 100 mg to 1200 mg
+* single and multiple doses
 
-The model quantifies ...
+The model quantifies metabolism via CYP3A4, including also the mechanism-based inhibition of the respective enzyme, as well as elimination via kidney. 
+
+The model also includes inhibition of p-gp (shown elsewhere).
 
 The next sections show:
 
@@ -300,9 +314,9 @@ Simulated versus observed concentration-time profiles of all data listed in [Sec
 ![013_plotTimeProfile.png](images\003_3_Results_and_Discussion\003_3_3_Concentration-Time_Profiles\002_3_3_2_Model_Verification\013_plotTimeProfile.png)
 
 # 4 Conclusion
-The herein presented PBPK model adequately describes the pharmacokinetics of COMPOUND in adults.
+The herein presented PBPK model adequately describes the pharmacokinetics of clarithromycin in adults.
 
-In particular, it applies quantitative ... Thus, the model is fit for purpose to be applied for...
+In particular, it applies quantitative metabolism by CYP3A4 by taking into account the mechanism-based inactivation of CYP3A4 as well as renal elimination of clarithromycin. Thus, the model is fit for purpose to be applied for the investigation of drug-drug interactions with regard to inhibition of CYP3A4 and P-gp.
 
 
 # 5 References
@@ -321,6 +335,8 @@ In particular, it applies quantitative ... Thus, the model is fit for purpose to
 **Eberl 2007** Eberl, S. et al. Role of p-glycoprotein inhibition for drug interactions: evidence from in vitro and pharmacoepidemiological studies. Clin. Pharmacokinet. 46, 1039–49 (2007).
 
 **Hanke 2018** Hanke, N. et al. PBPK Models for CYP3A4 and P-gp DDI Prediction: A Modeling Network of Rifampicin, Itraconazole, Clarithromycin,Midazolam, Alfentanil, and Digoxin. CPT Pharmacometrics Syst. Pharmacol. 7, 647-659 (2018)
+
+**Ishiguro 1989** Ishiguro M, Koga H, Kohno S, Hayashi T, Yamaguchi K, Hirota M. Penetration of macrolides into human polymorphonuclear leucocytes. J Antimicrob Chemother. 24, 719–29 (1989)
 
 **Ito 2003** Ito, K., Ogihara, K., Kanamitsu, S.-I. & Itoh, T. Prediction of the in vivo interaction between midazolam and macrolides based on in vitro studies using human liver microsomes. Drug Metab. Dispos. 31, 945–54 (2003).
 
