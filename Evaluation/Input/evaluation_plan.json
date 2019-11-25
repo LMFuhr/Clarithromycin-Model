@@ -3,7 +3,7 @@
     "Projects": [
         {
             "Id": "Clarithromycin-Model",
-            "Path": "C:/Users/Laura Fuhr/Documents/Clarithromycin-Model/Clarithromycin-Model/Clarithromycin-Model.json",
+            "Path": "https://raw.githubusercontent.com/LMFuhr/Clarithromycin-Model/master/Clarithromycin-Model.json",
             "BuildingBlocks": [],
             "SimulationParameters": []
         }

@@ -1,0 +1,359 @@
+# Building and Evaluation of a PBPK Model for COMPOUND in Adults
+
+
+
+| Version     | 0.1              |
+| ----------- | ---------------- |
+| OSP Version | 8.0              |
+| Author      | NAME (GitHub ID) |
+
+
+# Table of Contents
+  * [1 Introduction](#1-introduction)
+  * [2 Methods](#2-methods)
+    * [2.1 Modeling Strategy](#21-modeling-strategy)
+    * [2.2 Data](#22-data)
+    * [2.3 Model Parameters and Assumptions](#23-model-parameters-and-assumptions)
+  * [3 Results and Discussion](#3-results-and-discussion)
+    * [3.1 Final input parameters](#31-final-input-parameters)
+    * [3.2 Diagnostics Plots](#32-diagnostics-plots)
+    * [3.3 Concentration-Time Profiles](#33-concentration-time-profiles)
+      * [3.3.1 Model Building](#331-model-building)
+      * [3.3.2 Model Verification](#332-model-verification)
+  * [4 Conclusion](#4-conclusion)
+  * [5 References](#5-references)
+# 1 Introduction
+
+
+Clarithromycin is a widely prescribed macrolide antibiotic and a substrate and mechanism-based inactivator of CYP3A4. Furthermore, clarithromycin is a substrate and inhibitor of P-gp and an inhibitor of OATP1B1 and OATP1B3 ([Eberl 2007](#5 References), [Seithel 2007](#5 References)). Clarithromycin has been proposed as one of the best alternative CYP3A4 inhibitors for clinical DDI studies to avoid further use of ketoconazole.
+
+The presented Clarithromycin model was developed by Moj et al. ([Moj 2017](#5 References)) and revised by Hanke et al. ([Hanke 2018](#5 References)).
+
+
+# 2 Methods
+
+
+## 2.1 Modeling Strategy
+The general concept of building a PBPK model has previously been described by Kuepfer et al. ([Kuepfer 2016](# 5 References)). Information regarding the relevant anthropometric (height, weight) and physiological parameters (e.g. blood flows, organ volumes, binding protein concentrations, hematocrit, cardiac output) in adults was gathered from the literature and has been previously published ([PK-Sim Ontogeny Database Version 7.3](# References)). The information was incorporated into PK-Sim® and was used as default values for the simulations in adults.
+
+The  applied activity and variability of plasma proteins and active processes that are integrated into PK-Sim® are described in the publicly available PK-Sim® Ontogeny Database Version 7.3 ([Schlender 2016](# 5 References)) or otherwise referenced for the specific process.
+
+The clarithromycin model was developed using 17 clinical studies, covering a dosing range from 100 to 1200 mg. The model applies partitioning into blood cells, metabolism by CYP3A4 including mechanism-based auto-inactivation and a renal clearance.
+
+Unknown parameters (see below) were identified using the Parameter Identification module provided in PK-Sim®. 
+
+The model was then verified by simulating:
+
+- ...
+
+Details about input data (physicochemical, *in vitro* and clinical) can be found in  [Section 2.2](#2.2	Data).
+
+Details about the structural model and its parameters can be found in  [Section 2.3](#2.3 Model Parameters and Assumptions).
+
+
+## 2.2 Data
+### 2.2.1	In vitro / physico-chemical Data
+
+A literature search was performed to collect available information on physiochemical properties of dapagliflozin. The obtained information from literature is summarized in the table below. 
+
+| **Parameter**   | **Unit** | **Value**                    | Source                                                       | **Description**                                 |
+| :-------------- | -------- | ---------------------------- | ------------------------------------------------------------ | ----------------------------------------------- |
+| MW              | g/mol    | 747.95                       |                                                              | Molecular weight                                |
+| pK<sub>a</sub>  |          | 8.99 (base)                  | [McFarland 1997](# 5 References)                             | Acid dissociation constant                      |
+| Solubility (pH) | mg/L     | 12170 (2.4)                  | [Salem 2003](# 5 References)                                 | Solubility                                      |
+| logP            |          | 2.3                          | [Lappin 2011](#5 References)                                 | Partition coefficient between octanol and water |
+| fu              | %        | 28.0, 30.0,  40.0            | [Davey 1991](#5 References) , [Chu 1993a](#5 References), [Noreddin 2002](#5 References) | Fraction unbound in plasma                      |
+| CYP3A4 Km       | µmol/L   | 48.7                         | [Rodrigues 1997](#5 References)                              | Michaelis-Menten constant                       |
+| CLren           | mL/min   | 110-213                      | [Rodvold 1999](#5 References)                                | Renal plasma clearance                          |
+| CYP3A4 Ki       | µmol/L   | 2.25, 4.12, 5.49, 29.5, 39.2 | [Polasek 2006](#5 References), [Jones 2007](#5 References), [Mayhew 2000](#5 References), [Ito 2003](#5 References) | Conc. for half-maximal inactivation             |
+| CYP3A4 kinact   | 1/min    | 0.04, 0.05, 0.07, 0.23       | [Polasek 2006](#5 References), [Jones 2007](#5 References), [Mayhew 2000](#5 References), [Ito 2003](#5 References) | Maximum inactivation rate                       |
+| P-gp Ki         | µmol/L   | 4.1                          | [Eberl 2007](#5 References)                                  | Conc. for half-maximal inhibition               |
+
+### 2.2.2	Clinical Data
+
+A literature search was performed to collect available clinical data on clarithromycin in healthy adults.
+
+#### 2.2.2.1	Model Building
+
+The following studies were used for model building (training data):
+
+| Publication                | Arm / Treatment / Information used for model building        |
+| :------------------------- | :----------------------------------------------------------- |
+| [Chu 1992a](#5 References) | Healthy subjects with intravenous administration (0.75 h) of 250 mg |
+| [Chu 1993](#5 References)  | Healthy subjects with oral administration of 250 or 500 mg as single or twice daily for 5 days |
+
+#### 2.2.2.2	Model Verification
+
+The following studies were used for model verification:
+
+| Publication                         | Arm / Treatment / Information used for model building        |
+| :---------------------------------- | :----------------------------------------------------------- |
+| [Chu 1992](#5 References)           | Healthy Subjects with single doses between 100-1200 mg       |
+| [Kees 1995](#5 References)          | Healthy subjects with oral administration of 250 or 500 mg as single or multiple dose |
+| [Rengelshausen 2003](#5 References) | Oral administration of 250 mg twice a day for 1.5 days       |
+| [Abduljialil 2009](#5 References)   | Oral administration of 500 mg twice a day for 3.5 days       |
+
+
+## 2.3 Model Parameters and Assumptions
+### 2.3.1	Absorption
+
+...
+
+### 2.3.2	Distribution
+
+...
+
+After testing the available organ-plasma partition coefficient and cell permeability calculation methods built in PK-Sim, observed clinical data was best described by choosing the partition coefficient calculation by `Rodgers and Rowland` and cellular permeability calculation by `PK-Sim Standard`. 
+
+...
+
+### 2.3.3	Metabolism and Elimination
+
+...
+
+### 2.3.4	Automated Parameter Identification
+
+This is the result of the final parameter identification.
+
+| Model Parameter      | Optimized Value | Unit |
+| -------------------- | --------------- | ---- |
+| `PK-Sim parameter 1` |                 |      |
+| `PK-Sim parameter 2` |                 |      |
+| `PK-Sim parameter 3` |                 |      |
+| `PK-Sim parameter 4` |                 |      |
+
+
+# 3 Results and Discussion
+The PBPK model for COMPOUND was developed and verified with clinical pharmacokinetic data.
+
+The model was evaluated covering data from studies including in particular
+
+* ...
+* ...
+
+The model quantifies ...
+
+The next sections show:
+
+1. the final model parameters for the building blocks: [Section 3.1](#3.1 Final Input Parameters).
+2. the overall goodness of fit: [Section 3.2](#3.2 3.2 Diagnostics Plots).
+3. simulated vs. observed concentration-time profiles for the clinical studies used for model building and for model verification: [Section 3.3](#3.3 Concentration-Time Profiles).
+
+
+## 3.1 Final input parameters
+The compound parameter values of the final PBPK model are illustrated below.
+
+
+
+
+# Compound: Clarithromycin
+
+## Parameters
+
+Name                                             | Value           | Value Origin | Alternative | Default |
+------------------------------------------------ | --------------- | ------------:| ----------- | ------- |
+Solubility at reference pH                       | 12.17 mg/ml     |              | Measurement | True    |
+Reference pH                                     | 2.4             |              | Measurement | True    |
+Lipophilicity                                    | 2.3 Log Units   |              | Measurement | True    |
+Fraction unbound (plasma, reference value)       | 0.299           |              | Measurement | True    |
+Specific intestinal permeability (transcellular) | 1.23E-06 dm/min |              | fit         | True    |
+Is small molecule                                | Yes             |              |             |         |
+Molecular weight                                 | 747.9534 g/mol  |              |             |         |
+Plasma protein binding partner                   | Albumin         |              |             |         |
+## Calculation methods
+
+Name                    | Value               |
+----------------------- | ------------------- |
+Partition coefficients  | Rodgers and Rowland |
+Cellular permeabilities | PK-Sim Standard     |
+## Processes
+
+### Metabolizing Enzyme: CYP3A4-fit
+
+Molecule: CYP3A4
+#### Parameters
+
+Name                               | Value                      | Value Origin |
+---------------------------------- | -------------------------- | ------------ |
+In vitro Vmax for liver microsomes | 0 pmol/min/mg mic. protein |              |
+Km                                 | 48.7 µmol/l                |              |
+kcat                               | 76.5 1/min                 | Unknown      |
+### Systemic Process: Renal Clearances-fitted
+
+Species: Human
+#### Parameters
+
+Name                          | Value          | Value Origin |
+----------------------------- | -------------- | ------------ |
+Body weight                   | 71.5 kg        | Unknown      |
+Blood flow rate (kidney)      | 1.31 l/min     | Unknown      |
+Fraction unbound (experiment) | 0.4            |              |
+Plasma clearance              | 1.75 ml/min/kg |              |
+### Inhibition: ABCB1-Eberl (2007)
+
+Molecule: ABCB1
+#### Parameters
+
+Name | Value      | Value Origin |
+---- | ---------- | ------------: |
+Ki   | 4.1 µmol/l |              |
+### Inhibition: CYP3A4-fitted
+
+Molecule: CYP3A4
+#### Parameters
+
+Name          | Value       | Value Origin |
+------------- | ----------- | ------------: |
+kinact        | 0.04 1/min  |              |
+K_kinact_half | 6.04 µmol/l |              |
+### Inhibition: OATP1B1-Vermeer 2016
+
+Molecule: OATP1B1
+#### Parameters
+
+Name | Value      | Value Origin |
+---- | ---------- | ------------: |
+Ki   | 5.3 µmol/l |              |
+### Inhibition: OATP1B3-Vermeer 2016
+
+Molecule: OATP1B3
+#### Parameters
+
+Name | Value     | Value Origin |
+---- | --------- | ------------: |
+Ki   | 14 µmol/l |              |
+
+# Formulation: Tablet Clarithromycin
+
+Type: Weibull
+## Parameters
+
+Name                             | Value | Value Origin |
+-------------------------------- | ----- | ------------: |
+Dissolution time (50% dissolved) | 5 min |              |
+Lag time                         | 0 min |              |
+Dissolution shape                | 2.9   |              |
+Use as suspension                | No    |              |
+
+## 3.2 Diagnostics Plots
+Below you find the goodness-of-fit visual diagnostic plots for the PBPK model performance of all data used presented in [Section 2.2.2](#2.2 2	Clinical Data).
+
+The first plot shows observed versus simulated plasma concentration, the second weighted residuals versus time. 
+
+
+![001_plotGOFMergedPredictedVsObserved.png](images\003_3_Results_and_Discussion\002_3_2_Diagnostics_Plots\001_plotGOFMergedPredictedVsObserved.png)
+
+![002_plotGOFMergedResidualsOverTime.png](images\003_3_Results_and_Discussion\002_3_2_Diagnostics_Plots\002_plotGOFMergedResidualsOverTime.png)
+
+GMFE = 1.575193 
+
+## 3.3 Concentration-Time Profiles
+Simulated versus observed concentration-time profiles of all data listed in [Section 2.2.2](#2.2.2	Clinical Data) are presented below.
+
+
+### 3.3.1 Model Building
+
+
+
+
+
+![001_plotTimeProfile.png](images\003_3_Results_and_Discussion\003_3_3_Concentration-Time_Profiles\001_3_3_1_Model_Building\001_plotTimeProfile.png)
+
+![002_plotTimeProfile.png](images\003_3_Results_and_Discussion\003_3_3_Concentration-Time_Profiles\001_3_3_1_Model_Building\002_plotTimeProfile.png)
+
+![003_plotTimeProfile.png](images\003_3_Results_and_Discussion\003_3_3_Concentration-Time_Profiles\001_3_3_1_Model_Building\003_plotTimeProfile.png)
+
+![004_plotTimeProfile.png](images\003_3_Results_and_Discussion\003_3_3_Concentration-Time_Profiles\001_3_3_1_Model_Building\004_plotTimeProfile.png)
+
+![005_plotTimeProfile.png](images\003_3_Results_and_Discussion\003_3_3_Concentration-Time_Profiles\001_3_3_1_Model_Building\005_plotTimeProfile.png)
+
+### 3.3.2 Model Verification
+
+
+
+
+
+![001_plotTimeProfile.png](images\003_3_Results_and_Discussion\003_3_3_Concentration-Time_Profiles\002_3_3_2_Model_Verification\001_plotTimeProfile.png)
+
+![002_plotTimeProfile.png](images\003_3_Results_and_Discussion\003_3_3_Concentration-Time_Profiles\002_3_3_2_Model_Verification\002_plotTimeProfile.png)
+
+![003_plotTimeProfile.png](images\003_3_Results_and_Discussion\003_3_3_Concentration-Time_Profiles\002_3_3_2_Model_Verification\003_plotTimeProfile.png)
+
+![004_plotTimeProfile.png](images\003_3_Results_and_Discussion\003_3_3_Concentration-Time_Profiles\002_3_3_2_Model_Verification\004_plotTimeProfile.png)
+
+![005_plotTimeProfile.png](images\003_3_Results_and_Discussion\003_3_3_Concentration-Time_Profiles\002_3_3_2_Model_Verification\005_plotTimeProfile.png)
+
+![006_plotTimeProfile.png](images\003_3_Results_and_Discussion\003_3_3_Concentration-Time_Profiles\002_3_3_2_Model_Verification\006_plotTimeProfile.png)
+
+![007_plotTimeProfile.png](images\003_3_Results_and_Discussion\003_3_3_Concentration-Time_Profiles\002_3_3_2_Model_Verification\007_plotTimeProfile.png)
+
+![008_plotTimeProfile.png](images\003_3_Results_and_Discussion\003_3_3_Concentration-Time_Profiles\002_3_3_2_Model_Verification\008_plotTimeProfile.png)
+
+![009_plotTimeProfile.png](images\003_3_Results_and_Discussion\003_3_3_Concentration-Time_Profiles\002_3_3_2_Model_Verification\009_plotTimeProfile.png)
+
+![010_plotTimeProfile.png](images\003_3_Results_and_Discussion\003_3_3_Concentration-Time_Profiles\002_3_3_2_Model_Verification\010_plotTimeProfile.png)
+
+![011_plotTimeProfile.png](images\003_3_Results_and_Discussion\003_3_3_Concentration-Time_Profiles\002_3_3_2_Model_Verification\011_plotTimeProfile.png)
+
+![012_plotTimeProfile.png](images\003_3_Results_and_Discussion\003_3_3_Concentration-Time_Profiles\002_3_3_2_Model_Verification\012_plotTimeProfile.png)
+
+![013_plotTimeProfile.png](images\003_3_Results_and_Discussion\003_3_3_Concentration-Time_Profiles\002_3_3_2_Model_Verification\013_plotTimeProfile.png)
+
+# 4 Conclusion
+The herein presented PBPK model adequately describes the pharmacokinetics of COMPOUND in adults.
+
+In particular, it applies quantitative ... Thus, the model is fit for purpose to be applied for...
+
+
+# 5 References
+**Abduljalil 2009** Abduljalil, K. et al. Modeling the autoinhibition of clarithromycin metabolism during repeated oral administration. Antimicrob. Agents Chemother. 53, 2892–901 (2009).
+
+**Chu 1992** Chu, S.Y. et al. Pharmacokinetics of clarithromycin, a new macrolide, after single ascending oral doses. Antimicrob. Agents Chemother. 36, 2447–53 (1992).
+
+**Chu 1992a** Chu, S.Y., Deaton, R. & Cavanaugh, J. Absolute bioavailability of clarithromycin after oral administration in humans. Antimicrob. Agents Chemother. 36, 1147–50 (1992).
+
+**Chu 1993** Chu, S. et al. Single- and multiple-dose pharmacokinetics of clarithromycin, a new macrolide antimicrobial. J. Clin. Pharmacol. 33, 719–26 (1993).
+
+**Chu 1993a** Chu, S.Y. et al. Effect of moderate or severe hepatic impairment on clarithromycin pharmacokinetics. J. Clin. Pharmacol. 33, 480–5 (1993).
+
+**Davey 1991** Davey, P.G. The pharmacokinetics of clarithromycin and its 14-OH metabolite. J. Hosp. Infect. 19 Suppl A, 29–37 (1991).
+
+**Eberl 2007** Eberl, S. et al. Role of p-glycoprotein inhibition for drug interactions: evidence from in vitro and pharmacoepidemiological studies. Clin. Pharmacokinet. 46, 1039–49 (2007).
+
+**Hanke 2018** Hanke, N. et al. PBPK Models for CYP3A4 and P-gp DDI Prediction: A Modeling Network of Rifampicin, Itraconazole, Clarithromycin,Midazolam, Alfentanil, and Digoxin. CPT Pharmacometrics Syst. Pharmacol. 7, 647-659 (2018)
+
+**Ito 2003** Ito, K., Ogihara, K., Kanamitsu, S.-I. & Itoh, T. Prediction of the in vivo interaction between midazolam and macrolides based on in vitro studies using human liver microsomes. Drug Metab. Dispos. 31, 945–54 (2003).
+
+**Jones 2007** Jones, D.R., Ekins, S., Li, L. & Hall, S.D. Computational approaches that predict metabolic intermediate complex formation with CYP3A4 (+b5). Drug Metab. Dispos. 35, 1466–75 (2007).
+
+**Kees 1995** Kees, F., Wellenhofer, M. & Grobecker, H. Serum and cellular pharmacokinetics of clarithromycin 500 mg q.d. and 250 mg b.i.d. in volunteers. Infection 23, 168–72 (1995).
+
+**Kuepfer 2016** Kuepfer L, Niederalt C, Wendl T, Schlender JF, Willmann S, Lippert J, Block M, Eissing T, Teutonico D. Applied Concepts in PBPK Modeling: How to Build a PBPK/PD Model.CPT Pharmacometrics Syst Pharmacol. 2016 Oct;5(10):516-531. doi: 10.1002/psp4.12134. Epub 2016 Oct 19. 
+
+**Lappin 2011** Lappin, G. et al. Comparative pharmacokinetics between a microdose and therapeutic dose for clarithromycin, sumatriptan, propafenone, paracetamol (acetaminophen), and phenobarbital in human volunteers. Eur. J. Pharm. Sci. 43, 141–50 (2011).
+
+**Mayhew 2000** Mayhew, B.S., Jones, D.R. & Hall, S.D. An in vitro model for predicting in vivo inhibition of cytochrome P450 3A4 by metabolic intermediate complex formation. Drug Metab. Dispos. 28, 1031–7 (2000).
+
+**McFarland 1997** McFarland, J.W. et al. Quantitative structure-activity relationships among macrolide antibacterial agents: in vitro and in vivo potency against Pasteurella multocida. J. Med. Chem. 40, 1340–6 (1997).
+
+**Moj 2017** Moj, D. et al. Clarithromycin, midazolam, and digoxin: application of PBPK modeling to gain new insights into drug-drug interactions and co-medication regimens. AAPS J. 19, 298–312 (2017).
+
+**Noreddin 2002** Noreddin, A.M. et al. Pharmacodynamic modeling of clarithromycin against macrolide-resistant [PCR-positive mef(A) or erm(B)] Streptococcus pneumoniae simulating clinically achievable serum and epithelial lining fluid free-drug concentrations. Antimicrob. Agents Chemother. 46, 4029–34 (2002).
+
+**PK-Sim Ontogeny Database Version 7.3** (https://github.com/Open-Systems-Pharmacology/OSPSuite.Documentation/blob/38cf71b384cfc25cfa0ce4d2f3addfd32757e13b/PK-Sim%20Ontogeny%20Database%20Version%207.3.pdf)	
+
+**Polasek 2006** Polasek, T.M. & Miners, J.O. Quantitative prediction of macrolide drug-drug interaction potential from in vitro studies using testosterone as the human cytochrome P4503A substrate. Eur. J. Clin. Pharmacol. 62, 203–8 (2006).
+
+**Rengelshausen 2003** Rengelshausen, J. et al. Contribution of increased oral bioavailability and reduced nonglomerular renal clearance of digoxin to the digoxin-clarithromycin interaction. Br. J. Clin. Pharmacol. 56, 32–8 (2003).
+
+**Rodrigues 1997** Rodrigues, A.D., Roberts, E.M., Mulford, D.J., Yao, Y. & Ouellet, D. Oxidative metabolism of clarithromycin in the presence of human liver microsomes. Major role for the cytochrome P4503A (CYP3A) subfamily. Drug Metab. Dispos. 25, 623–30 (1997).
+
+**Rodvold 1999** Rodvold, K.A. Clinical pharmacokinetics of clarithromycin. Clin. Pharmacokinet. 37, 385–98 (1999).
+
+**Salem 2003** Salem, I.I. & Düzgünes, N. Efficacies of cyclodextrin-complexed and liposome-encapsulated clarithromycin against Mycobacterium avium complex infection in human macrophages. Int. J. Pharm. 250, 403–14 (2003).
+
+**Schlender 2016** Schlender JF, Meyer M, Thelen K, Krauss M, Willmann S, Eissing T, Jaehde U. Development of a Whole-Body Physiologically Based Pharmacokinetic Approach to Assess the Pharmacokinetics of Drugs in Elderly Individuals. Clin Pharmacokinet. 2016 Dec;55(12):1573-1589. 	
+
+**Seithel 2007** Seithel, A. et al. The influence of macrolide antibiotics on the uptake of organic anions and drugs mediated by OATP1B1 and OATP1B3. Drug Metab. Dispos. 35, 779–86 (2007).
+
+
