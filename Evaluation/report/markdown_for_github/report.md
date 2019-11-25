@@ -164,16 +164,16 @@ The compound parameter values of the final PBPK model are illustrated below.
 
 ## Parameters
 
-Name                                             | Value           | Value Origin | Alternative | Default |
------------------------------------------------- | --------------- | ------------:| ----------- | ------- |
-Solubility at reference pH                       | 12.17 mg/ml     |              | Measurement | True    |
-Reference pH                                     | 2.4             |              | Measurement | True    |
-Lipophilicity                                    | 2.3 Log Units   |              | Measurement | True    |
-Fraction unbound (plasma, reference value)       | 0.299           |              | Measurement | True    |
-Specific intestinal permeability (transcellular) | 1.23E-06 dm/min |              | fit         | True    |
-Is small molecule                                | Yes             |              |             |         |
-Molecular weight                                 | 747.9534 g/mol  |              |             |         |
-Plasma protein binding partner                   | Albumin         |              |             |         |
+Name                                             | Value           | Value Origin                       | Alternative | Default |
+------------------------------------------------ | --------------- | ---------------------------------- | ----------- | ------- |
+Solubility at reference pH                       | 12.17 mg/ml     | Publication-Salem 2003             | Measurement | True    |
+Reference pH                                     | 2.4             | Publication-Salem 2003             | Measurement | True    |
+Lipophilicity                                    | 2.3 Log Units   | Publication-Lappin 2011            | Measurement | True    |
+Fraction unbound (plasma, reference value)       | 0.299           | Publication-Chu 1993               | Measurement | True    |
+Specific intestinal permeability (transcellular) | 1.23E-06 dm/min | Parameter Identification-optimized | fit         | True    |
+Is small molecule                                | Yes             |                                    |             |         |
+Molecular weight                                 | 747.9534 g/mol  |                                    |             |         |
+Plasma protein binding partner                   | Albumin         |                                    |             |         |
 ## Calculation methods
 
 Name                    | Value               |
@@ -187,11 +187,11 @@ Cellular permeabilities | PK-Sim Standard     |
 Molecule: CYP3A4
 #### Parameters
 
-Name                               | Value                      | Value Origin |
----------------------------------- | -------------------------- | ------------ |
-In vitro Vmax for liver microsomes | 0 pmol/min/mg mic. protein |              |
-Km                                 | 48.7 µmol/l                |              |
-kcat                               | 76.5 1/min                 | Unknown      |
+Name                               | Value                      | Value Origin               |
+---------------------------------- | -------------------------- | -------------------------- |
+In vitro Vmax for liver microsomes | 0 pmol/min/mg mic. protein |                            |
+Km                                 | 48.7 µmol/l                | Publication-Rodrigues 1997 |
+kcat                               | 76.5 1/min                 | Parameter Identification   |
 ### Systemic Process: Renal Clearances-fitted
 
 Species: Human
@@ -208,9 +208,9 @@ Plasma clearance              | 1.75 ml/min/kg |              |
 Molecule: ABCB1
 #### Parameters
 
-Name | Value      | Value Origin |
----- | ---------- | ------------: |
-Ki   | 4.1 µmol/l |              |
+Name | Value      | Value Origin           |
+---- | ---------- | ---------------------- |
+Ki   | 4.1 µmol/l | Publication-Eberl 2007 |
 ### Inhibition: CYP3A4-fitted
 
 Molecule: CYP3A4
@@ -225,17 +225,17 @@ K_kinact_half | 6.04 µmol/l |              |
 Molecule: OATP1B1
 #### Parameters
 
-Name | Value      | Value Origin |
----- | ---------- | ------------: |
-Ki   | 5.3 µmol/l |              |
+Name | Value      | Value Origin             |
+---- | ---------- | ------------------------ |
+Ki   | 5.3 µmol/l | Publication-Vermeer 2016 |
 ### Inhibition: OATP1B3-Vermeer 2016
 
 Molecule: OATP1B3
 #### Parameters
 
-Name | Value     | Value Origin |
----- | --------- | ------------: |
-Ki   | 14 µmol/l |              |
+Name | Value     | Value Origin             |
+---- | --------- | ------------------------ |
+Ki   | 14 µmol/l | Publication-Vermeer 2016 |
 
 # Formulation: Tablet Clarithromycin
 
