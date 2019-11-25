@@ -38,7 +38,7 @@ qualificationPlanName = 'evaluation_plan.json';
 qualificationPlan = fullfile(baseDir,'Input',qualificationPlanName);
 REInput_path = fullfile(baseDir,'re_input');
 REOutput_path = fullfile(baseDir,'re_output');
-ReportOutput_path=fullfile(baseDir,'report2');
+ReportOutput_path=fullfile(baseDir,'report');
 
 % --------------------------------------------------------------
 % STEP #1: start qualification runner to generate inputs for the reporting engine
