@@ -126,12 +126,13 @@ A kidney plasma clearance was implemented to describe the renal elimination of c
 
 This is the result of the final parameter identification.
 
-| Model Parameter      | Optimized Value | Unit |
-| -------------------- | --------------- | ---- |
-| `PK-Sim parameter 1` |                 |      |
-| `PK-Sim parameter 2` |                 |      |
-| `PK-Sim parameter 3` |                 |      |
-| `PK-Sim parameter 4` |                 |      |
+| Model Parameter                    | Optimized Value | Unit   |
+| ---------------------------------- | --------------- | ------ |
+| `CYP3A4 kcat`                      | 76.5            | 1/min  |
+| `CLren`                            | 100             | mL/min |
+| `Specific intestinal permeability` | 1.23 E-6        | dm/min |
+| `Perm. into blood cells`           | 3.62 E-5        | dm/min |
+| `Perm. out of blood cells`         | 1.04 E-6        | dm/min |
 
 
 # 3 Results and Discussion
