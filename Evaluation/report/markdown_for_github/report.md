@@ -1,11 +1,11 @@
-# Building and Evaluation of a PBPK Model for COMPOUND in Adults
+# Building and Evaluation of a PBPK Model for Clarithromycin in Adults
 
 
 
-| Version     | 0.1              |
-| ----------- | ---------------- |
-| OSP Version | 8.0              |
-| Author      | NAME (GitHub ID) |
+| Version     | 0.1  |
+| ----------- | ---- |
+| OSP Version | 8.0  |
+| Author      |      |
 
 
 # Table of Contents
@@ -311,8 +311,6 @@ Simulated versus observed concentration-time profiles of all data listed in [Sec
 ![011_plotTimeProfile.png](images\003_3_Results_and_Discussion\003_3_3_Concentration-Time_Profiles\002_3_3_2_Model_Verification\011_plotTimeProfile.png)
 
 ![012_plotTimeProfile.png](images\003_3_Results_and_Discussion\003_3_3_Concentration-Time_Profiles\002_3_3_2_Model_Verification\012_plotTimeProfile.png)
-
-![013_plotTimeProfile.png](images\003_3_Results_and_Discussion\003_3_3_Concentration-Time_Profiles\002_3_3_2_Model_Verification\013_plotTimeProfile.png)
 
 # 4 Conclusion
 The herein presented PBPK model adequately describes the pharmacokinetics of clarithromycin in adults.

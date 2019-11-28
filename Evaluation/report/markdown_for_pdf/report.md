@@ -1,11 +1,11 @@
-# Building and Evaluation of a PBPK Model for COMPOUND in Adults
+# Building and Evaluation of a PBPK Model for Clarithromycin in Adults
 
 
 
-| Version     | 0.1              |
-| ----------- | ---------------- |
-| OSP Version | 8.0              |
-| Author      | NAME (GitHub ID) |
+| Version     | 0.1  |
+| ----------- | ---- |
+| OSP Version | 8.0  |
+| Author      |      |
 
 
 # Table of Contents
@@ -40,14 +40,14 @@ The general concept of building a PBPK model has previously been described by Ku
 
 The  applied activity and variability of plasma proteins and active processes that are integrated into PK-Sim® are described in the publicly available PK-Sim® Ontogeny Database Version 7.3 ([Schlender 2016](# 5 References)) or otherwise referenced for the specific process.
 
-A typical European individual was used for the development of the clarithromycin model. The relativ tissue specitif expression of CYP3A4 was implemented in accordance with literature using the PK-Sim expression database RT-PCR profile. Enterohepatic cycling was enabled as it is active under physiological conditions. 
+A typical European individual was used for the development of the clarithromycin model. The relativ tissue specific expression of CYP3A4 was implemented in accordance with literature using the PK-Sim expression database RT-PCR profile. Enterohepatic cycling was enabled as it is active under physiological conditions. 
 
 Unknown parameters (see below) were identified using the Parameter Identification module provided in PK-Sim®. 
 
 The model was then verified by simulating:
 
 - the whole reported dose range including single and multiple doses
-- DDIs with CYP3A4 or P-gp substrates
+- DDIs with CYP3A4 or P-gp substrates (shown elsewhere)
 
 Details about input data (physicochemical, *in vitro* and clinical) can be found in  [Section 2.2](#2.2	Data).
 
@@ -106,7 +106,7 @@ The specific intestinal permeability was optimized during parameter identificati
 
 Values for logP and fu were fixed according to literature values. 
 
-For clarithromycin, it was not possible to adequately describe the concentration-time profile after intravenous administration using standard input parameters (e.g., logP) and calculation methods (e.g., partition coefficients). Simulated concentration-time profiles over-predicted Cmax and under-predicted the observed data for time > Tmax. According to literature, clarithromycin accumulates in mononuclear (MN) and polymorphonuclear (PMN) leukocytes, probably via active transport ([Ishiguro 1989](#5 References)). This process was implemented, and it improved the model significantly. Due to limited knowledge on this transport (unknown transporter, unknown Vmax, and KM value), an adjustment of the clarithromycin permeability between plasma and RBC compartments was applied. The clarithromycin permeability optimization (Pplasma→RBC, PRBC→plasma) led to an asymmetric permeability ratio Pplasma→RBC/PRBC→plasma of 13, indicating that clarithromycin can more easily enter than exit the RBC compartments.
+For clarithromycin, it was not possible to adequately describe the concentration-time profile after intravenous administration using standard input parameters (e.g. logP) and calculation methods. Simulated concentration-time profiles over-predicted Cmax and under-predicted the observed data for time > Tmax. According to literature, clarithromycin accumulates in mononuclear and polymorphonuclear leukocytes, probably via active transport ([Ishiguro 1989](#5 References)). This process was implemented, and it improved the model significantly. Due to limited knowledge on this transport, an adjustment of the clarithromycin permeability between plasma and RBC compartments was applied. 
 
 After testing the available organ-plasma partition coefficient and cell permeability calculation methods built in PK-Sim, observed clinical data was best described by choosing the partition coefficient calculation by `Rodgers and Rowland` and cellular permeability calculation by `PK-Sim Standard`. 
 
@@ -311,8 +311,6 @@ Simulated versus observed concentration-time profiles of all data listed in [Sec
 ![011_plotTimeProfile.png](images\003_3_Results_and_Discussion\003_3_3_Concentration-Time_Profiles\002_3_3_2_Model_Verification\011_plotTimeProfile.png)
 
 ![012_plotTimeProfile.png](images\003_3_Results_and_Discussion\003_3_3_Concentration-Time_Profiles\002_3_3_2_Model_Verification\012_plotTimeProfile.png)
-
-![013_plotTimeProfile.png](images\003_3_Results_and_Discussion\003_3_3_Concentration-Time_Profiles\002_3_3_2_Model_Verification\013_plotTimeProfile.png)
 
 # 4 Conclusion
 The herein presented PBPK model adequately describes the pharmacokinetics of clarithromycin in adults.
